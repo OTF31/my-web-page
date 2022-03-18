@@ -30,7 +30,7 @@ class MenuLateral extends React.Component {
               </button>
 
               <div className="flex flex-col w-full h-full gap-1 mt-7">
-                <img className="self-center w-20 h-16 mt-2 mb-4 rounded-3xl" src="https://w7.pngwing.com/pngs/825/857/png-transparent-computer-icons-user-profile-user-silhouette-apple-icon-image-format-user-profile.png" />
+                <img className="self-center w-20 h-16 mt-2 mb-4 rounded-3xl" src="https://w7.pngwing.com/pngs/825/857/png-transparent-computer-icons-user-profile-user-silhouette-apple-icon-image-format-user-profile.png" alt="" />
                 <h3 className="self-center text-white font-[Montserrat]">{this.props.user}</h3>
                 <h3 className="self-center mb-6 text-white font-[Montserrat]">{this.props.id}</h3>
 
@@ -71,7 +71,7 @@ class MenuLateral extends React.Component {
                   Menú 6
                 </button>
 
-                <input className="fixed z-10 self-start w-6 h-6 rounded-md left-3 bottom-3" type="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS03-grNITz_3FuNUQE1ACG0yOFcpB6ZtMgzA&usqp=CAU" />
+                <input className="fixed z-10 self-start w-6 h-6 rounded-md left-3 bottom-3" type="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS03-grNITz_3FuNUQE1ACG0yOFcpB6ZtMgzA&usqp=CAU" alt="" />
               </div>
             </div > :
             <div className="fixed top-0 left-0 w-12 h-screen rounded-r-lg bg-primary-color">
@@ -82,7 +82,7 @@ class MenuLateral extends React.Component {
               </button>
 
               <div className="flex flex-col w-full h-full gap-1 mt-12">
-                <img className="self-center mt-12 mb-4 rounded-full w-7 h-7" src="https://w7.pngwing.com/pngs/825/857/png-transparent-computer-icons-user-profile-user-silhouette-apple-icon-image-format-user-profile.png" />
+                <img className="self-center mt-12 mb-4 rounded-full w-7 h-7" src="https://w7.pngwing.com/pngs/825/857/png-transparent-computer-icons-user-profile-user-silhouette-apple-icon-image-format-user-profile.png" alt="" />
 
                 <button className="flex justify-between self-stretch p-2 ml-1 mr-1 mt-12 text-white shadow-inner shadow-orange-500 hover:bg-secondary-color hover:text-black font-[Montserrat]">
                   <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -116,7 +116,7 @@ class MenuLateral extends React.Component {
                   </svg>
                 </button>
 
-                <input className="fixed z-10 self-start w-8 h-8 rounded-md left-2 bottom-3" type="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS03-grNITz_3FuNUQE1ACG0yOFcpB6ZtMgzA&usqp=CAU" />
+                <input className="fixed z-10 self-start w-8 h-8 rounded-md left-2 bottom-3" type="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS03-grNITz_3FuNUQE1ACG0yOFcpB6ZtMgzA&usqp=CAU" alt="" />
               </div>
             </div>
         }
