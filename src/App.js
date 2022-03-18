@@ -2,9 +2,9 @@ import React from "react";
 
 import "./App.css";
 
-import MenuLateral from "./componentes/MenuLateral.js";
-import Login from "./componentes/Login.js"
-import Images from "./componentes/Images.js"
+import MenuLateral from "./componentes/MenuLateral.jsx";
+import Login from "./componentes/Login.jsx"
+import Images from "./componentes/Images.jsx"
 
 
 class App extends React.Component {

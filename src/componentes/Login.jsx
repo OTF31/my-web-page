@@ -47,7 +47,7 @@ class Login extends React.Component {
             <input className="pl-2 border-2" type="password" id="password" value={this.state.password} onChange={this.passHandleChange} />
           </div>
 
-          <button className="col-span-2 col-start-1 row-start-3 p-2 mt-4 mr-2 text-sm border-2 rounded-md justify-self-stretch border-primary-color hover:bg-secondary-color" onClick={() => this.props.updateProfile(this.state.user)}>
+          <button className="col-span-2 col-start-1 row-start-3 p-2 mt-4 mr-2 text-sm text-white border-2 rounded-md justify-self-stretch border-secondary-color bg-primary-color/90 hover:bg-secondary-color hover:border-primary-color hover:text-black hover:scale-95" onClick={() => this.props.updateProfile(this.state.user)}>
             Ingresar
           </button>
         </form>
