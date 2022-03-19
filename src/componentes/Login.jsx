@@ -4,24 +4,9 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 
 
 const Login = (props) => {
-  const [user, setUser] = useState("");
-  const [password, setPassword] = useState("");
-
-  const userHandleChange = e => {
-    setUser(e.target.value);
-  }
-
-  const changeUservalue = (value, setFieldValue) => {
-    setFieldValue("user", value);
-  }
-
-  const passHandleChange = e => {
-    setPassword(e.target.value);
-  }
-
   // Esquema
   const validationSchema = Yup.object({
-    user: Yup.string().required("Por favor ingresa usuario"),
+    user: Yup.string().required("Usuario requerido"),
     password: Yup.string().required("Contraseña requerida").min(4, "La contraseña debe de ser más de 4 caracteres"),
   });
 
@@ -31,11 +16,11 @@ const Login = (props) => {
     password: "",
   }
 
-  const onSubmit = (values) => {
+  const onSubmit = values => {
     alert(JSON.stringify(values, null, 2)); // Convertir objeto de JS a JSON
   };
 
-  const renderError = (message) => <p className="text-red-900 font-bold mt-2">{message}</p>;
+  const renderError = (message) => <p className="mt-2 font-bold text-red-900">{message}</p>;
 
   // const submitHandle = e => {
   //   e.preventDefault();
@@ -46,30 +31,23 @@ const Login = (props) => {
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
-        onSubmit={async (values, { resetForm }) => {
-          alert(user);
-          await onSubmit(values);
+        onSubmit={(values, { resetForm }) => {
+          alert(JSON.stringify(values, null, 2));
           resetForm();
         }}
       >
-
         <Form className="">
-          <div className="grid grid-cols-1 p-2 mx-auto mt-8 border-8 h-60 w-1/4 rounded-2xl font-[Montserrat] border-primary-colors">
-            <label className="" for="user">
-              Usuario:
-            </label>
-
-            {/* <input name="user" className="pl-2 border-2" type="text" id="user" value={user} onChange={userHandleChange} /> */}
-            <Field name="user" type="text" className="pl-2 border-2" value={user} onChange={e => userHandleChange(e)} />
+          <div className="grid grid-cols-1 p-2  border-8 mx-auto mt-8 h-72 w-1/4 border-primary-color/40 rounded-xl font-[Montserrat] border-primary-colors">
+            <label className="" for="user">Usuario:</label>
+            <Field name="user" className="pl-2 border-2 rounded-sm border-primary-color/50" />
             <ErrorMessage className="text-red-900" name="user" render={renderError} />
 
-            <label className="mt-4" for="password">
-              Contraseña:
-            </label>
+            <label className="mt-4" for="password">Contraseña:</label>
 
             {/* <input className="pl-2 border-2" type="password" id="password" value={password} onChange={passHandleChange} /> */}
-            <Field name="password" type="password" s className="pl-2 border-2" />
+            <Field name="password" type="password" className="pl-2 border-2 rounded-sm border-primary-color/50" />
             <ErrorMessage className="text-red-900" name="password" render={renderError} />
+
 
             <button className="p-2 mt-4 mr-2 text-sm text-white border-2 rounded-md justify-self-stretch border-secondary-color bg-primary-color/90 hover:bg-secondary-color hover:border-primary-color hover:text-black hover:scale-95" type="submit">
               Ingresar
@@ -82,12 +60,12 @@ const Login = (props) => {
         <label className="" for="user">
           Usuario:
         </label>
-        <input className="pl-2 border-2 self-stretch row-start-2 col-end-3 col-span-2" type="text" id="user" value={user} onChange={userHandleChange} />
+        <input className="self-stretch col-span-2 col-end-3 row-start-2 pl-2 border-2" type="text" id="user" value={user} onChange={userHandleChange} />
 
         <label className="row-start-3" for="password">
           Contraseña:
         </label>
-        <input className="pl-2 border-2 row-start-4 col-end-3 col-span-2" type="password" id="password" value={password} onChange={passHandleChange} />
+        <input className="col-span-2 col-end-3 row-start-4 pl-2 border-2" type="password" id="password" value={password} onChange={passHandleChange} />
 
         <button className="col-span-2 col-start-1 row-start-5 p-2 mt-4 mr-2 text-sm text-white border-2 rounded-md justify-self-stretch border-secondary-color bg-primary-color/90 hover:bg-secondary-color hover:border-primary-color hover:text-black hover:scale-95" onClick={() => this.props.updateProfile(user)}>
           Ingresar
