@@ -3,7 +3,7 @@ import React from "react";
 class Images extends React.Component {
   render() {
     return (
-      <div className="py-8 mt-4 mb-4 ml-16 mr-4 rounded-md bg-stone-800 px-30">
+      <div className="py-8 mt-12 mb-4 ml-16 mr-4 rounded-md bg-stone-800 px-30">
         <h1 className="mx-10 text-2xl font-bold text-center text-white">
           Imágenes
         </h1>

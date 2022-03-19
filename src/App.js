@@ -20,7 +20,6 @@ class App extends React.Component {
     this.setState({
       isOpenSideMenu: !this.state.isOpenSideMenu,
     })
-    e.preventDefault();
   }
 
   updateProfile = (user) => {
