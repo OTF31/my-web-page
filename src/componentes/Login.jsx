@@ -33,21 +33,17 @@ class Login extends React.Component {
     return (
       <>
         <form className="grid flex-row grid-cols-2 p-2 mx-auto mt-8 border-2 h-44 w-64 rounded-2xl font-[Montserrat] border-primary-color" onSubmit={this.submitHandle}>
-          <div>
-            <label className="block" for="user">
-              Usuario:
-            </label>
-            <input className="pl-2 border-2 " type="text" id="user" value={this.state.user} onChange={this.userHandleChange} />
-          </div>
+          <label className="" for="user">
+            Usuario:
+          </label>
+          <input className="pl-2 border-2 self-stretch row-start-2 col-end-3 col-span-2" type="text" id="user" value={this.state.user} onChange={this.userHandleChange} />
 
-          <div className="row-start-2">
-            <label className="block" for="password">
-              Contraseña:
-            </label>
-            <input className="pl-2 border-2" type="password" id="password" value={this.state.password} onChange={this.passHandleChange} />
-          </div>
+          <label className="row-start-3" for="password">
+            Contraseña:
+          </label>
+          <input className="pl-2 border-2 row-start-4 col-end-3 col-span-2" type="password" id="password" value={this.state.password} onChange={this.passHandleChange} />
 
-          <button className="col-span-2 col-start-1 row-start-3 p-2 mt-4 mr-2 text-sm text-white border-2 rounded-md justify-self-stretch border-secondary-color bg-primary-color/90 hover:bg-secondary-color hover:border-primary-color hover:text-black hover:scale-95" onClick={() => this.props.updateProfile(this.state.user)}>
+          <button className="col-span-2 col-start-1 row-start-5 p-2 mt-4 mr-2 text-sm text-white border-2 rounded-md justify-self-stretch border-secondary-color bg-primary-color/90 hover:bg-secondary-color hover:border-primary-color hover:text-black hover:scale-95" onClick={() => this.props.updateProfile(this.state.user)}>
             Ingresar
           </button>
         </form>

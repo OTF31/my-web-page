@@ -3,27 +3,18 @@ import React from "react";
 class MenuLateral extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      isOpen: false,
-    };
-
-    this.openMenu = this.openMenu.bind(this);
-  }
-
-  openMenu = () => {
-    this.setState({
-      isOpen: !this.state.isOpen,
-    })
   }
 
   render() {
+    let isOpenSideMenu = this.props.isOpenSideMenu;
+    let openSideMenu = this.props.openSideMenu;
+
     return (
       <>
         {
-          this.state.isOpen ?
+          isOpenSideMenu ?
             <div className="fixed top-0 left-0 w-1/6 h-screen rounded-r-lg bg-primary-color" >
-              <button className="fixed text-white top-4 left-2 hover:scale-125" onClick={this.openMenu}>
+              <button className="fixed text-white top-4 left-2 hover:scale-125" onClick={openSideMenu}>
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z" />
                 </svg>
@@ -31,8 +22,8 @@ class MenuLateral extends React.Component {
 
               <div className="flex flex-col w-full h-full gap-1 mt-7">
                 <img className="self-center w-20 h-16 mt-2 mb-4 rounded-3xl" src="https://w7.pngwing.com/pngs/825/857/png-transparent-computer-icons-user-profile-user-silhouette-apple-icon-image-format-user-profile.png" alt="" />
-                <h3 className="self-center text-white font-[Montserrat]">{this.props.user}</h3>
-                <h3 className="self-center mb-6 text-white font-[Montserrat]">{this.props.id}</h3>
+                <h3 className="self-center text-white font-[Montserrat]">{this.props.datosPerfil["nombres"]}</h3>
+                <h3 className="self-center mb-6 text-white font-[Montserrat]">{this.props.datosPerfil["apellidos"]}</h3>
 
                 <button className="flex justify-between self-stretch p-2 ml-1 mr-1 text-white shadow-inner shadow-orange-500 hover:bg-secondary-color hover:text-black font-[Montserrat]">
                   <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -71,14 +62,17 @@ class MenuLateral extends React.Component {
                   Menú 6
                 </button>
 
-                <svg xmlns="http://www.w3.org/2000/svg" className="fixed z-10 self-start w-6 h-6 text-white rounded-md left-2 bottom-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
+                <button>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="fixed z-10 self-start w-6 h-6 text-white rounded-md left-2 bottom-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </button>
+
               </div>
             </div > :
             <div className="fixed top-0 left-0 w-12 h-screen rounded-r-lg bg-primary-color">
-              <button className="fixed text-white top-5 left-3" onClick={this.openMenu}>
+              <button className="fixed text-white top-5 left-3" onClick={openSideMenu}>
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>

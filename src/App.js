@@ -3,18 +3,24 @@ import React from "react";
 import "./App.css";
 
 import MenuLateral from "./componentes/MenuLateral.jsx";
-import Login from "./componentes/Login.jsx"
-import Images from "./componentes/Images.jsx"
+import ContenedorPrincipal from "./componentes/ContenedorPrincipal.jsx"
 
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: "Denis Omar",
-      id: "182906"
+      isOpenSideMenu: true,
     }
     this.updateProfile = this.updateProfile.bind(this);
+    this.openSideMenu = this.openSideMenu.bind(this);
+  }
+
+  openSideMenu = (e) => {
+    this.setState({
+      isOpenSideMenu: !this.state.isOpenSideMenu,
+    })
+    e.preventDefault();
   }
 
   updateProfile = (user) => {
@@ -24,11 +30,17 @@ class App extends React.Component {
   }
 
   render() {
+    const datosPerfil = {
+      nombres: "Denis Omar",
+      apellidos: "Cuyo Ttito",
+      telefono: "962938820",
+      direccion: "Av. Los Olivos 15304",
+    }
+
     return (
       <>
-        <MenuLateral user={this.state.user} id={this.state.id} />
-        <Login updateProfile={this.updateProfile} />
-        <Images />
+        <MenuLateral isOpenSideMenu={this.state.isOpenSideMenu} openSideMenu={this.openSideMenu} datosPerfil={datosPerfil} />
+        <ContenedorPrincipal isOpenSideMenu={this.state.isOpenSideMenu} />
       </>
     );
   }
