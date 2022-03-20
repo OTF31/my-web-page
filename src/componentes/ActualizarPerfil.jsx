@@ -9,13 +9,17 @@ const ActualizarPerfil = (props) => {
     telefono: Yup.string().length(9, "Debe ser 9 dígitos").required("Requerido"),
     direccion: Yup.string(),
     email: Yup.string().email("Debe ser un email válido").required("Requerido"),
-    fechaDeNacimiento: Yup.date().required("Requerido"),
+    fecha: Yup.date().required("Requerido"),
   });
 
   // Valores iniciales
   const initialValues = {
-    user: "",
-    password: "",
+    nombres: "",
+    apellidos: "",
+    telefono: "",
+    direccion: "",
+    email: "",
+    fecha: "01/01/2022",
   }
 
   const renderError = (message) => <p className="absolute text-[15px] font-bold text-red-700">{message}</p>;
@@ -31,40 +35,40 @@ const ActualizarPerfil = (props) => {
         }}
       >
         <Form className="grid grid-cols-1 gap-2 mt-6 mr-2 font-[Montserrat] md:grid-cols-2 md:gap-4 place-items-center lg:grid-cols-3 lg:gap-6 md:text-base lg:text-xl text-sm">
-          <div className="mb-[10px]">
+          <div className="mb-[10px] w-[80%]">
             <label htmlFor="nombres" className="block">Nombres:</label>
-            <Field id="nombres" name="nombres" className="block w-9/12 px-px border-2 border-secondary-color ring-primary-color ring-2" />
+            <Field id="nombres" name="nombres" className="block w-full pl-[3px] border-2 border-secondary-color focus:border-primary-color focus:border-[2px] focus:ring-4 focus:ring-primary-color/70 shadow-lg focus:shadow-secondary-color/50" />
             <ErrorMessage name="nombres" render={renderError} />
           </div>
 
-          <div className="mb-[10px]">
+          <div className="mb-[10px] w-[80%]">
             <label htmlFor="apellidos" className="block">Apellidos:</label>
-            <Field id="apellidos" name="apellidos" className="block w-9/12 px-px border-2 border-secondary-color ring-primary-color ring-2" />
+            <Field id="apellidos" name="apellidos" className="block w-full pl-[3px] border-2 border-secondary-color focus:border-primary-color focus:border-[2px] focus:ring-4 focus:ring-primary-color/70 shadow-lg focus:shadow-secondary-color/50" />
             <ErrorMessage name="apellidos" render={renderError} />
           </div>
 
-          <div className="mb-[10px]">
+          <div className="mb-[10px] w-[80%]">
             <label htmlFor="telefono" className="block">Teléfono:</label>
-            <Field id="telefono" name="telefono" className="block w-9/12 px-px border-2 border-secondary-color ring-primary-color ring-2" />
+            <Field id="telefono" name="telefono" className="block w-full pl-[3px] border-2 border-secondary-color focus:border-primary-color focus:border-[2px] focus:ring-4 focus:ring-primary-color/70 shadow-lg focus:shadow-secondary-color/50" />
             <ErrorMessage name="telefono" render={renderError} />
           </div>
 
-          <div className="mb-[10px]">
+          <div className="mb-[10px] w-[80%]">
             <label htmlFor="direccion" className="block">Dirección:</label>
-            <Field id="direccion" name="direccion" className="block w-9/12 px-px border-2 border-secondary-color ring-primary-color ring-2" />
+            <Field id="direccion" name="direccion" className="block w-full pl-[3px] border-2 border-secondary-color focus:border-primary-color focus:border-[2px] focus:ring-4 focus:ring-primary-color/70 shadow-lg focus:shadow-secondary-color/50" />
             <ErrorMessage name="direccion" render={renderError} />
           </div>
 
-          <div className="mb-[10px]">
+          <div className="mb-[10px] w-[80%]">
             <label htmlFor="email" className="block">E-mail:</label>
-            <Field id="email" name="email" className="block w-9/12 px-px border-2 border-secondary-color ring-primary-color ring-2" />
+            <Field id="email" name="email" className="block w-full pl-[3px] border-2 border-secondary-color focus:border-primary-color focus:border-[2px] focus:ring-4 focus:ring-primary-color/70 shadow-lg focus:shadow-secondary-color/50" />
             <ErrorMessage name="email" render={renderError} />
           </div>
 
-          <div className="mb-[10px]">
-            <label htmlFor="fechaNacimiento" className="block">Fecha:</label>
-            <Field type="date" id="fechaNacimiento" name="fechaNacimiento" className="block w-9/12 px-px border-2 border-secondary-color ring-primary-color ring-2" />
-            <ErrorMessage name="fechaNacimiento" render={renderError} />
+          <div className="mb-[10px] w-[80%]">
+            <label htmlFor="fecha" className="block">Fecha:</label>
+            <Field type="date" id="fecha" name="fecha" className="block w-full pl-[3px] border-2 border-secondary-color focus:border-primary-color focus:border-[2px] focus:ring-4 focus:ring-primary-color/70 shadow-lg focus:shadow-secondary-color/50" />
+            <ErrorMessage name="fecha" render={renderError} />
           </div>
 
           <button className="p-1 rounded-[15%] mt-4 border-2 lg:col-span-3 md:col-span-2 border-primary-color hover:scale-[107%]" type="submit">
@@ -72,42 +76,15 @@ const ActualizarPerfil = (props) => {
           </button>
         </Form>
       </Formik>
-
-      {/* <div className="grid grid-cols-1 gap-2 mt-6 mr-2 font-[Montserrat] md:grid-cols-2 md:gap-4 place-items-center lg:grid-cols-3 lg:gap-6 md:text-base lg:text-xl text-sm">
-        <div className="">
-          <label htmlFor="nombres" className="block">Nombres:</label>
-          <input type="text" id="nombres" className="block w-9/12 border-2" />
-        </div>
-
-        <div className="">
-          <label htmlFor="apellidos" className="block">Apellidos:</label>
-          <input type="text" id="apellidos" className="block w-9/12 border-2" />
-        </div>
-
-        <div className="">
-          <label htmlFor="telefono" className="block">Teléfono:</label>
-          <input type="text" id="telefono" className="block w-9/12 border-2" />
-        </div>
-
-        <div className="">
-          <label htmlFor="direccion" className="block">Dirección:</label>
-          <input type="text" id="direccion" className="block w-9/12 border-2" />
-        </div>
-
-        <div className="">
-          <label htmlFor="email" className="block">E-mail:</label>
-          <input type="text" id="email" className="block w-9/12 border-2" />
-        </div>
-
-        <div>
-          <label htmlFor="fechaNacimiento" className="block">Fecha de nacimiento:</label>
-          <input type="date" id="fechaNacimiento" className="block w-11/12 border-2" />
-        </div>
-
-        <button className="mt-4 lg:col-span-3 md:col-span-2">
-          Actualizar
-        </button>
-      </div> */}
+      <div class="selection:bg-fuchsia-300 selection:text-fuchsia-900">
+        <p>
+          So I started to walk into the water. I won't lie to you boys, I was
+          terrified. But I pressed on, and as I made my way past the breakers
+          a strange calm came over me. I don't know if it was divine intervention
+          or the kinship of all living things but I tell you Jerry at that moment,
+          I <em>was</em> a marine biologist.
+        </p>
+      </div>
     </>
   );
 };
