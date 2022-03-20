@@ -8,7 +8,7 @@ const ContenedorPrincipal = (props) => {
   return (
     <>
       <div className={`${props.isOpenSideMenu ? "ml-[18%]" : "ml-[10%]"}`}>
-        <ActualizarPerfil isOpenSideMenu={props.isOpenSideMenu} name="Denis" />
+        <ActualizarPerfil isOpenSideMenu={props.isOpenSideMenu} />
         <Login />
         <Images />
       </div>
