@@ -31,16 +31,16 @@ const Login = (props) => {
           resetForm();
         }}
       >
-        <Form className="grid grid-cols-1 grid-rows-[2fr_2fr_1fr] p-2 border-8 mx-auto mt-8 h-56 w-1/4 border-primary-color/40 rounded-xl font-[Montserrat] border-primary-colors justify-items-center">
+        <Form className="grid grid-cols-1 grid-rows-[2fr_2fr_1fr] p-2 text-[14px] border-8 mx-auto mt-8 h-56 w-[80%] md:w-[50%] lg:w-[35%] md:text-[18px] border-primary-color/40 rounded-xl font-[Montserrat] border-primary-colors justify-items-center">
           <div className="w-[95%]">
-            <label htmlFor="user">Usuario:</label>
-            <Field id="user" name="user" className="w-full px-px border-2 rounded-sm border-primary-color/50" />
+            <label htmlFor="user" className="block">Usuario:</label>
+            <Field id="user" name="user" type="text" className="block w-full px-px border-2 rounded-sm border-primary-color/50" />
             <ErrorMessage className="text-red-900" name="user" render={renderError} />
           </div>
 
           <div className="w-[95%]">
-            <label className="w-[95%]" htmlFor="password">Contraseña:</label>
-            <Field id="password" name="password" type="password" className="w-full px-px border-2 rounded-sm border-primary-color/50" />
+            <label className="block" htmlFor="password">Contraseña:</label>
+            <Field id="password" name="password" type="password" className="block w-full px-px border-2 rounded-sm border-primary-color/50" />
             <ErrorMessage className="text-red-900" name="password" render={renderError} />
           </div>
 

@@ -71,7 +71,7 @@ const ActualizarPerfil = (props) => {
             <ErrorMessage name="fecha" render={renderError} />
           </div>
 
-          <button className="p-1 rounded-[15%] mt-4 border-2 lg:col-span-3 md:col-span-2 border-primary-color hover:scale-[107%]" type="submit">
+          <button className="self-center p-1 rounded-[15%] border-2 lg:col-span-3 md:col-span-2 border-primary-color hover:scale-[107%]" type="submit">
             Actualizar
           </button>
         </Form>
