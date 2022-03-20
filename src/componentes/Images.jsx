@@ -9,7 +9,7 @@ class Images extends React.Component {
             Imágenes
           </h1>
 
-          <div className="flex flex-wrap justify-between gap-2 m-4">
+          <div className="flex flex-wrap justify-between gap-4 m-4">
             <img className="h-56 border-2 rounded-lg hover:border-cyan-600 hover:border-4 hover:scale-95" src="https://picsum.photos/200/300"
               alt="" />
             <img className="h-56 border-2 rounded-lg hover:border-cyan-600 hover:border-4 hover:scale-95" src="https://picsum.photos/200/301"

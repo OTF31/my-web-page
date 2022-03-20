@@ -34,12 +34,14 @@ class App extends React.Component {
       apellidos: "Cuyo Ttito",
       telefono: "962938820",
       direccion: "Av. Los Olivos 15304",
+      email: "admin@admin.com",
+      fecha: "2022-02-02",
     }
 
     return (
       <>
         <MenuLateral isOpenSideMenu={this.state.isOpenSideMenu} openSideMenu={this.openSideMenu} datosPerfil={datosPerfil} />
-        <ContenedorPrincipal isOpenSideMenu={this.state.isOpenSideMenu} />
+        <ContenedorPrincipal isOpenSideMenu={this.state.isOpenSideMenu} datosPerfil={datosPerfil} />
       </>
     );
   }

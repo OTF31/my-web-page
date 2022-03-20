@@ -14,12 +14,12 @@ const ActualizarPerfil = (props) => {
 
   // Valores iniciales
   const initialValues = {
-    nombres: "",
-    apellidos: "",
-    telefono: "",
-    direccion: "",
-    email: "",
-    fecha: "01/01/2022",
+    nombres: props.datosPerfil["nombres"],
+    apellidos: props.datosPerfil["apellidos"],
+    telefono: props.datosPerfil["telefono"],
+    direccion: props.datosPerfil["direccion"],
+    email: props.datosPerfil["email"],
+    fecha: props.datosPerfil["fecha"],
   }
 
   const renderError = (message) => <p className="absolute text-[15px] font-bold text-red-700">{message}</p>;

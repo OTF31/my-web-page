@@ -7,8 +7,8 @@ import Images from "./Images.jsx"
 const ContenedorPrincipal = (props) => {
   return (
     <>
-      <div className={`${props.isOpenSideMenu ? "ml-[18%]" : "ml-[10%]"}`}>
-        <ActualizarPerfil isOpenSideMenu={props.isOpenSideMenu} />
+      <div className={`md:lg:ml-[20%] sm:ml-[12%]`}>
+        <ActualizarPerfil isOpenSideMenu={props.isOpenSideMenu} datosPerfil={props.datosPerfil} />
         <Login />
         <Images />
       </div>
