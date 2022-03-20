@@ -1,4 +1,3 @@
-import { useState } from "react";
 import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 
@@ -7,7 +6,7 @@ const Login = (props) => {
   // Esquema
   const validationSchema = Yup.object({
     user: Yup.string().required("Usuario requerido"),
-    password: Yup.string().required("Contraseña requerida").min(4, "La contraseña debe de ser más de 4 caracteres"),
+    password: Yup.string().required("Contraseña requerida").min(4, "Debe de tener al menos 4 caracteres"),
   });
 
   // Valores iniciales
@@ -16,11 +15,7 @@ const Login = (props) => {
     password: "",
   }
 
-  const onSubmit = values => {
-    alert(JSON.stringify(values, null, 2)); // Convertir objeto de JS a JSON
-  };
-
-  const renderError = (message) => <p className="mt-2 font-bold text-red-900">{message}</p>;
+  const renderError = (message) => <p className="absolute text-[14px] mt-2 font-bold text-red-900">{message}</p>;
 
   // const submitHandle = e => {
   //   e.preventDefault();
@@ -36,20 +31,21 @@ const Login = (props) => {
           resetForm();
         }}
       >
-        <Form className="">
-          <div className="grid grid-cols-1 p-2  border-8 mx-auto mt-8 h-72 w-1/4 border-primary-color/40 rounded-xl font-[Montserrat] border-primary-colors">
-            <label className="" for="user">Usuario:</label>
-            <Field name="user" className="pl-2 border-2 rounded-sm border-primary-color/50" />
+        <Form className="grid grid-cols-1 grid-rows-[2fr_2fr_1fr] p-2 border-8 mx-auto mt-8 h-56 w-1/4 border-primary-color/40 rounded-xl font-[Montserrat] border-primary-colors justify-items-center">
+          <div className="w-[95%]">
+            <label htmlFor="user">Usuario:</label>
+            <Field id="user" name="user" className="w-full px-px border-2 rounded-sm border-primary-color/50" />
             <ErrorMessage className="text-red-900" name="user" render={renderError} />
+          </div>
 
-            <label className="mt-4" for="password">Contraseña:</label>
-
-            {/* <input className="pl-2 border-2" type="password" id="password" value={password} onChange={passHandleChange} /> */}
-            <Field name="password" type="password" className="pl-2 border-2 rounded-sm border-primary-color/50" />
+          <div className="w-[95%]">
+            <label className="w-[95%]" htmlFor="password">Contraseña:</label>
+            <Field id="password" name="password" type="password" className="w-full px-px border-2 rounded-sm border-primary-color/50" />
             <ErrorMessage className="text-red-900" name="password" render={renderError} />
+          </div>
 
-
-            <button className="p-2 mt-4 mr-2 text-sm text-white border-2 rounded-md justify-self-stretch border-secondary-color bg-primary-color/90 hover:bg-secondary-color hover:border-primary-color hover:text-black hover:scale-95" type="submit">
+          <div className="w-[95%]">
+            <button className="w-full p-2 text-sm text-white border-2 rounded-md justify-self-stretch border-secondary-color bg-primary-color/90 hover:bg-secondary-color hover:border-primary-color hover:text-black hover:scale-95" type="submit">
               Ingresar
             </button>
           </div>
