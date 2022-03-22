@@ -1,25 +1,26 @@
 import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 
-
 const Login = (props) => {
   // Esquema
   const validationSchema = Yup.object({
     user: Yup.string().required("Usuario requerido"),
-    password: Yup.string().required("Contraseña requerida").min(4, "Debe de tener al menos 4 caracteres"),
+    password: Yup.string()
+      .required("Contraseña requerida")
+      .min(4, "Debe de tener al menos 4 caracteres"),
   });
 
   // Valores iniciales
   const initialValues = {
     user: "",
     password: "",
-  }
+  };
 
-  const renderError = (message) => <p className="absolute text-[14px] mt-2 font-bold text-red-900">{message}</p>;
-
-  // const submitHandle = e => {
-  //   e.preventDefault();
-  // }
+  const renderError = (message) => (
+    <p className="absolute mt-2 text-[14px] font-bold text-red-900">
+      {message}
+    </p>
+  );
 
   return (
     <>
@@ -31,21 +32,46 @@ const Login = (props) => {
           resetForm();
         }}
       >
-        <Form className="grid grid-cols-1 grid-rows-[2fr_2fr_1fr] p-2 text-[14px] border-8 mx-auto mt-8 h-56 w-[80%] md:w-[50%] lg:w-[35%] md:text-[18px] border-primary-color/40 rounded-xl font-[Montserrat] border-primary-colors justify-items-center">
+        <Form className="border-primary-colors mx-auto mt-8 grid h-56 w-[80%] grid-cols-1 grid-rows-[2fr_2fr_1fr] justify-items-center rounded-xl border-8 border-primary-color/40 p-2 font-[Montserrat] text-[14px] md:w-[50%] md:text-[18px] lg:w-[35%]">
           <div className="w-[95%]">
-            <label htmlFor="user" className="block">Usuario:</label>
-            <Field id="user" name="user" type="text" className="block w-full px-px border-2 rounded-sm border-primary-color/50" />
-            <ErrorMessage className="text-red-900" name="user" render={renderError} />
+            <label htmlFor="user" className="block">
+              Usuario:
+            </label>
+            <Field
+              id="user"
+              name="user"
+              type="text"
+              className="block w-full rounded-sm border-2 border-primary-color/50 px-px"
+            />
+            <ErrorMessage
+              className="text-red-900"
+              name="user"
+              render={renderError}
+            />
           </div>
 
           <div className="w-[95%]">
-            <label className="block" htmlFor="password">Contraseña:</label>
-            <Field id="password" name="password" type="password" className="block w-full px-px border-2 rounded-sm border-primary-color/50" />
-            <ErrorMessage className="text-red-900" name="password" render={renderError} />
+            <label className="block" htmlFor="password">
+              Contraseña:
+            </label>
+            <Field
+              id="password"
+              name="password"
+              type="password"
+              className="block w-full rounded-sm border-2 border-primary-color/50 px-px"
+            />
+            <ErrorMessage
+              className="text-red-900"
+              name="password"
+              render={renderError}
+            />
           </div>
 
           <div className="w-[95%]">
-            <button className="w-full p-2 text-sm text-white border-2 rounded-md justify-self-stretch border-secondary-color bg-primary-color/90 hover:bg-secondary-color hover:border-primary-color hover:text-black hover:scale-95" type="submit">
+            <button
+              className="w-full justify-self-stretch rounded-md border-2 border-secondary-color bg-primary-color/90 p-2 text-sm text-white hover:scale-95 hover:border-primary-color hover:bg-secondary-color hover:text-black"
+              type="submit"
+            >
               Ingresar
             </button>
           </div>
@@ -68,7 +94,7 @@ const Login = (props) => {
         </button>
       </form> */}
     </>
-  )
-}
+  );
+};
 
 export default Login;

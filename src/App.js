@@ -3,15 +3,14 @@ import React from "react";
 import "./App.css";
 
 import MenuLateral from "./componentes/MenuLateral.jsx";
-import ContenedorPrincipal from "./componentes/ContenedorPrincipal.jsx"
-
+import ContenedorPrincipal from "./componentes/ContenedorPrincipal.jsx";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isOpenSideMenu: true,
-    }
+    };
     this.updateProfile = this.updateProfile.bind(this);
     this.openSideMenu = this.openSideMenu.bind(this);
   }
@@ -19,14 +18,14 @@ class App extends React.Component {
   openSideMenu = (e) => {
     this.setState({
       isOpenSideMenu: !this.state.isOpenSideMenu,
-    })
-  }
+    });
+  };
 
   updateProfile = (user) => {
     this.setState({
       user: user,
-    })
-  }
+    });
+  };
 
   render() {
     const datosPerfil = {
@@ -36,12 +35,19 @@ class App extends React.Component {
       direccion: "Av. Los Olivos 15304",
       email: "admin@admin.com",
       fecha: "2022-02-02",
-    }
+    };
 
     return (
       <>
-        <MenuLateral isOpenSideMenu={this.state.isOpenSideMenu} openSideMenu={this.openSideMenu} datosPerfil={datosPerfil} />
-        <ContenedorPrincipal isOpenSideMenu={this.state.isOpenSideMenu} datosPerfil={datosPerfil} />
+        <MenuLateral
+          isOpenSideMenu={this.state.isOpenSideMenu}
+          openSideMenu={this.openSideMenu}
+          datosPerfil={datosPerfil}
+        />
+        <ContenedorPrincipal
+          isOpenSideMenu={this.state.isOpenSideMenu}
+          datosPerfil={datosPerfil}
+        />
       </>
     );
   }
