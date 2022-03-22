@@ -1,7 +1,5 @@
 import React from "react";
 
-import "./App.css";
-
 import MenuLateral from "./componentes/MenuLateral.jsx";
 import ContenedorPrincipal from "./componentes/ContenedorPrincipal.jsx";
 

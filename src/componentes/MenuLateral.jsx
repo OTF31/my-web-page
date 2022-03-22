@@ -6,7 +6,7 @@ class MenuLateral extends React.Component {
   }
 
   render() {
-    let isOpenSideMenu = this.props.isOpenSideMenu;
+    // let isOpenSideMenu = this.props.isOpenSideMenu;
     let openSideMenu = this.props.openSideMenu;
 
     return (
