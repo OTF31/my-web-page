@@ -1,7 +1,14 @@
 import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import { useContext } from "react";
+
+import { contextPersonalData } from "../App";
 
 const ActualizarPerfil = (props) => {
+  const { personalData, setPersonalData } = useContext(contextPersonalData);
+
+  let _personalData = personalData;
+
   // Esquema
   const validationSchema = Yup.object({
     nombres: Yup.string().required("Requerido"),
@@ -15,14 +22,7 @@ const ActualizarPerfil = (props) => {
   });
 
   // Valores iniciales
-  const initialValues = {
-    nombres: props.datosPerfil["nombres"],
-    apellidos: props.datosPerfil["apellidos"],
-    telefono: props.datosPerfil["telefono"],
-    direccion: props.datosPerfil["direccion"],
-    email: props.datosPerfil["email"],
-    fecha: props.datosPerfil["fecha"],
-  };
+  const initialValues = personalData;
 
   const renderError = (message) => (
     <p className="absolute text-[15px] font-bold text-red-700">{message}</p>
@@ -35,6 +35,8 @@ const ActualizarPerfil = (props) => {
         validationSchema={validationSchema}
         onSubmit={(values, { resetForm }) => {
           alert(JSON.stringify(values, null, 2));
+          console.log(values);
+          setPersonalData(values);
           resetForm();
         }}
       >

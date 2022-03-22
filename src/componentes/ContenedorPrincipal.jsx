@@ -8,10 +8,7 @@ const ContenedorPrincipal = (props) => {
   return (
     <>
       <div className={`ml-[12%] md:lg:ml-[20%]`}>
-        <ActualizarPerfil
-          isOpenSideMenu={props.isOpenSideMenu}
-          datosPerfil={props.datosPerfil}
-        />
+        <ActualizarPerfil isOpenSideMenu={props.isOpenSideMenu} />
         <Login />
         <Images />
       </div>
